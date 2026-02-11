@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Tarefa</title>
+    <!--CSS do projecto-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!--Js do projecto-->
+    <script src="js/script.js?v=2.0" defer></script>
+</head>
+
+<body>
+    <div class="todo-container">
+        <div class="overlay hidden">
+            <div class="modal-info">
+                <div class="photo-perfil">
+                    <div class="photo"></div>
+                    <div class="about-author">
+                        <h4>Dev-Muca</h4>
+                        <p>Desenvolvidor do App</p>
+                    </div>
+
+                </div>
+                <div class="app-info">
+                    <button class="btn-info" onclick="closeModal()"><em>x</em></button>
+                    <p>Este aplicativo de <span>Gestão de Tarefas</span>
+                        ajuda você a organizar suas tarefas com facilidade.
+                        Simples, rápido e focado em produtividade.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <header>
+            <h1> Gestão de Tarefas</h1>
+            <button class="btn-info" onclick="openModal()">
+                <em>i</em>
+            </button>
+        </header>
+        <!-- Inicio do Form para adicionar tarefas-->
+        <form id="todo-form">
+            <p>Adiciona a sua tarefa</p>
+            <div class="form-control">
+                <input type="text" id="input" placeholder="O que você vai fazer?">
+                <button type="submit">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </form>
+        <!--FIM do Form para adicionar tarefas-->
+        <!--INICIO Form para Editar tarefas-->
+        <form id="edit-form" class="hide">
+            <p>Edite à sua tarefa:</p>
+            <div class="form-control">
+                <input type="text" id="edit-input">
+                <button>
+                    <i class="fa fa-check-double"></i>
+                </button>
+            </div>
+            <button id="cancel-edit-btn">Cancelar</button>
+        </form>
+        <!--FIM do  Form para Editar tarefas-->
+        <!--Área de ferramentas-->
+        <div id="toolbar">
+            <div id="search">
+                <h4>Pesquisar</h4>
+                <form>
+                    <input type="text" id="search-input" placeholder="Pesquisar">
+                    <button id="erase-button">
+                        <i class="fa fa-delete-left"></i>
+                    </button>
+                </form>
+            </div>
+            <div id="filter">
+                <h4>Filtrar</h4>
+                <select id="filter-select">
+                    <option value="all">Todos</option>
+                    <option value="done">Tarefas concluídas</option>
+                    <option value="todo">Tarefas a fazer</option>
+                </select>
+            </div>
+        </div>
+        <!--FIM de Área de ferramentas-->
+        <!--A lista de todas tarefas-->
+        <div class="todo-list">
+            <!--Elemento inseridos automaticamente com javascript-->
+        </div>
+        <!-- FIM da lista de todas tarefas -->
+    </div>
+    </div>
+</body>
+</html>
