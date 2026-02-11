@@ -295,4 +295,318 @@ select {
     }
 }
 
+/* ===== MEDIA QUERIES ===== */
 
+/* ===== DISPOSITIVOS MÓVEIS (0px a 767px) - Android, iPhone ===== */
+@media (max-width: 767px) {
+    /* Container principal */
+    .todo-container {
+        max-width: 100%;
+        margin: 0.5rem;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    /* Header */
+    .todo-container header {
+        padding: 0 0.5rem 0.8rem;
+    }
+
+    .todo-container header h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-info {
+        height: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Formulários */
+    #todo-form,
+    #edit-form {
+        padding: 0.8rem;
+    }
+
+    .form-control #input,
+    .form-control #edit-input {
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+
+    /* Área de ferramentas */
+    #toolbar {
+        flex-direction: column;
+        padding: 0.8rem;
+        gap: 1rem;
+    }
+
+    #search {
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
+        padding-right: 0;
+        padding-bottom: 1rem;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    #search form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #search input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #filter {
+        width: 100%;
+    }
+
+    /* Tarefas */
+    .todo {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .todo h3 {
+        font-size: 0.85rem;
+        width: 100%;
+    }
+
+    .todo button {
+        margin-left: 0;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Modal */
+    .modal-info {
+        max-width: 90%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .photo-perfil {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .photo-perfil .photo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .app-info {
+        padding-left: 0;
+    }
+
+    .app-info p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== TABLET (768px a 1023px) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Container principal */
+    .todo-container {
+        max-width: 600px;
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+
+    /* Header */
+    .todo-container header {
+        padding: 0 0.8rem 1rem;
+    }
+
+    .todo-container header h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-info {
+        height: 1.6rem;
+        font-size: 0.95rem;
+    }
+
+    /* Formulários */
+    #todo-form,
+    #edit-form {
+        padding: 1rem;
+    }
+
+    .form-control #input,
+    .form-control #edit-input {
+        padding: 0.65rem;
+        font-size: 0.98rem;
+    }
+
+    /* Área de ferramentas */
+    #toolbar {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    #search {
+        padding-right: 1rem;
+        margin-right: 1rem;
+        width: 60%;
+    }
+
+    #filter {
+        width: 40%;
+    }
+
+    /* Tarefas */
+    .todo {
+        padding: 0.9rem;
+        gap: 0.5rem;
+    }
+
+    .todo h3 {
+        font-size: 0.9rem;
+    }
+
+    .todo button {
+        margin-left: 0.3rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    /* Modal */
+    .modal-info {
+        max-width: 50%;
+        height: 50%;
+        padding: 1.2rem;
+    }
+
+    .photo-perfil .photo {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .app-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== DESKTOP (1024px e acima) ===== */
+@media (min-width: 1024px) {
+    /* Container principal */
+    .todo-container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    /* Header */
+    .todo-container header {
+        padding: 0 1rem 1rem;
+    }
+
+    .todo-container header h1 {
+        font-size: 2rem;
+    }
+
+    .btn-info {
+        height: 1.7rem;
+        font-size: 1rem;
+    }
+
+    /* Formulários */
+    #todo-form,
+    #edit-form {
+        padding: 1rem;
+    }
+
+    .form-control #input,
+    .form-control #edit-input {
+        padding: 0.68rem 0.6rem;
+        font-size: 1rem;
+    }
+
+    /* Área de ferramentas */
+    #toolbar {
+        padding: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    #search {
+        border-right: 1px solid var(--color-primary);
+        padding-right: 1rem;
+        margin-right: 1rem;
+        width: 65%;
+    }
+
+    #filter {
+        width: 35%;
+    }
+
+    /* Tarefas */
+    .todo {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .todo h3 {
+        font-size: 0.9rem;
+    }
+
+    .todo button {
+        margin-left: 0.4rem;
+    }
+
+    /* Modal */
+    .modal-info {
+        max-width: 35%;
+        height: 45%;
+        padding: 1.2rem;
+    }
+
+    .photo-perfil .photo {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .app-info p {
+        font-size: 0.96rem;
+    }
+}
+
+/* ===== TELAS MUITO GRANDES (1400px+) ===== */
+@media (min-width: 1400px) {
+    /* Container principal */
+    .todo-container {
+        max-width: 700px;
+    }
+
+    /* Header */
+    .todo-container header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Formulários */
+    .form-control #input,
+    .form-control #edit-input {
+        padding: 0.75rem 0.8rem;
+        font-size: 1.05rem;
+    }
+
+    /* Tarefas */
+    .todo {
+        padding: 1.2rem;
+    }
+
+    .todo h3 {
+        font-size: 1rem;
+    }
+
+    /* Modal */
+    .modal-info {
+        max-width: 35%;
+        height: 50%;
+    }
+}
