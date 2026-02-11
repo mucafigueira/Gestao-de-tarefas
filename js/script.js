@@ -23,6 +23,25 @@ const salvarTarefasLocalStorage = () => {
     console.log("✅ Salvo no localStorage:", todos);
 };
 
+// Forçar background dos inputs de pesquisa e filtro (fallback caso CSS seja ignorado)
+const applySearchFilterBg = () => {
+    try {
+        const si = document.getElementById('search-input');
+        const fs = document.getElementById('filter-select');
+        if (si) {
+            si.style.backgroundColor = '#fff';
+            si.style.borderRadius = '6px';
+        }
+        if (fs) {
+            fs.style.backgroundColor = '#fff';
+            fs.style.borderRadius = '6px';
+        }
+        console.log('🎯 Background aplicado via JS a search/filter');
+    } catch (err) {
+        console.error('Erro aplicando background via JS:', err);
+    }
+};
+
 // Carregar tarefas do localStorage
 const carregarTarefasLocalStorage = () => {
     console.log("📥 Iniciando carregamento do localStorage...");
@@ -304,8 +323,10 @@ if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
         console.log("✅ DOM pronto!");
         carregarTarefasLocalStorage();
+        applySearchFilterBg();
     });
 } else {
     console.log("✅ DOM já estava pronto!");
     carregarTarefasLocalStorage();
+    applySearchFilterBg();
 }

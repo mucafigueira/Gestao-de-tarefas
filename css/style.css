@@ -22,7 +22,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
+    min-height: 100vh;
 }
 
 /*body::after {
@@ -38,6 +38,7 @@ button {
     background-color: var(--background-color);
     color: var(--bg-color-secundary);
     border: 2px solid var(--color-primary);
+    border-radius: 6px;
     padding: .3rem .6rem;
     font-size: 1rem;
     cursor: pointer;
@@ -58,7 +59,8 @@ button:hover >i {
 button i {
     color: var(--bg-color-secundary);
     font-weight: bold;
-    pointer-events: none
+    pointer-events: none;
+
         /*Isto faz com que quando clicado no icon faz de conta que foi clicado o botão*/
 }
 
@@ -173,19 +175,48 @@ select {
     display: flex;
 }
 
-#search input {
+#search-input {
     width: 100%;
     margin-right: 0.3rem;
-}
-
-#filter {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-}
-
-#filter select {
     flex: 1;
+    padding: 0.68rem 0.6rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+/* garantir especificidade por ID para aplicar corretamente */
+#search input,
+#search input:focus,
+#search-input {
+    flex: 1;
+    padding: 0.68rem 0.6rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg-color-primary);
+    background-color: #fff;
+    border-radius: 6px;
+}
+    flex: 1;
+    padding: 0.68rem 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+     background-color: #fff;
+    border-radius: 6px;
+}
+
+/* select de filtro: mesmo estilo visual do input de pesquisa */
+#filter-select {
+    flex: 1;
+    padding: 0.68rem 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#filter select:focus {
+    background-color: rgba(231, 177, 77, 0.06);
 }
 
 /*A lista de todas tarefas*/
@@ -280,6 +311,11 @@ select {
  }
 }
 
+input, #search-input{
+    background-color: #fff;
+    border-radius: 6px;
+}
+
 
 @keyframes openModal{
     0% {
@@ -295,6 +331,9 @@ select {
     }
 }
 
+
+
+
 /* ===== MEDIA QUERIES ===== */
 
 /* ===== DISPOSITIVOS MÓVEIS (0px a 767px) - Android, iPhone ===== */
@@ -305,6 +344,10 @@ select {
         margin: 0.5rem;
         padding: 1rem;
         border-radius: 10px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     /* Header */
@@ -350,13 +393,18 @@ select {
     }
 
     #search form {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: row;
+        gap: 0.3rem;
     }
 
     #search input {
-        width: 100%;
+        flex: 1;
         margin-right: 0;
+    }
+
+    #search button {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.85rem;
     }
 
     #filter {
